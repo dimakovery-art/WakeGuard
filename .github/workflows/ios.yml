@@ -23,7 +23,26 @@ jobs:
         run: |
           xcodebuild -version
           xcodebuild -showsdks
-          xcodebuild -project WakeGuard.xcodeproj -scheme WakeGuard -configuration Release -destination 'generic/platform=iOS' CODE_SIGNING_ALLOWED=NO build
+          xcodebuild -project WakeGuard.xcodeproj -scheme WakeGuard -configuration Release -destination 'generic/platform=iOS' -derivedDataPath "$RUNNER_TEMP/WakeGuard-build" CODE_SIGNING_ALLOWED=NO build
+      - name: Package iPhone app for personal signing
+        if: matrix.major == 27
+        run: |
+          app="$RUNNER_TEMP/WakeGuard-build/Build/Products/Release-iphoneos/WakeGuard.app"
+          test -x "$app/WakeGuard"
+          test -x "$app/PlugIns/WakeGuardActivity.appex/WakeGuardActivity"
+          cd "$RUNNER_TEMP"
+          mkdir -p Payload
+          ditto "$app" Payload/WakeGuard.app
+          /usr/bin/zip -qry -y WakeGuard.ipa Payload
+          unzip -tq WakeGuard.ipa
+          shasum -a 256 WakeGuard.ipa
+      - name: Upload iPhone IPA
+        if: matrix.major == 27
+        uses: actions/upload-artifact@v4
+        with:
+          name: WakeGuard-iPhone
+          path: ${{ runner.temp }}/WakeGuard.ipa
+          if-no-files-found: error
       - name: Test on iPhone simulator
         env:
           IOS_MAJOR: ${{ matrix.major }}
