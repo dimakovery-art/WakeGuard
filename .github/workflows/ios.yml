@@ -1,0 +1,40 @@
+name: WakeGuard iOS
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build-and-test:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-26
+            major: 26
+          - runner: xcode-27
+            major: 27
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Xcode and iPhone SDK
+        run: |
+          xcodebuild -version
+          xcodebuild -showsdks
+          xcodebuild -project WakeGuard.xcodeproj -scheme WakeGuard -configuration Release -destination 'generic/platform=iOS' CODE_SIGNING_ALLOWED=NO build
+      - name: Test on iPhone simulator
+        env:
+          IOS_MAJOR: ${{ matrix.major }}
+        run: |
+          DEVICE=$(python3 scripts/simulator.py "$IOS_MAJOR")
+          xcrun simctl bootstatus "$DEVICE" -b
+          xcodebuild -project WakeGuard.xcodeproj -scheme WakeGuard -destination "platform=iOS Simulator,id=$DEVICE" -parallel-testing-enabled NO -resultBundlePath WakeGuardTests.xcresult test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: XCTest-iOS-${{ matrix.major }}
+          path: WakeGuardTests.xcresult
+          if-no-files-found: ignore
+

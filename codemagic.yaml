@@ -1,0 +1,26 @@
+workflows:
+  testflight:
+    name: WakeGuard TestFlight
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    integrations:
+      app_store_connect: WakeGuard
+    environment:
+      xcode: latest
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: org.example.wakeguard
+    scripts:
+      - name: Apply distribution profiles
+        script: xcode-project use-profiles
+      - name: Archive and export IPA
+        script: |
+          agvtool new-version -all "$BUILD_NUMBER"
+          xcode-project build-ipa --project WakeGuard.xcodeproj --scheme WakeGuard
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+    publishing:
+      app_store_connect:
+        auth: integration
+

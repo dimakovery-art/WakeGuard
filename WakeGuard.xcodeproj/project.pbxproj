@@ -1,0 +1,622 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+		35EF1D121F4E145A5E44095C = {
+			isa = PBXFileReference;
+			lastKnownFileType = "text.plist.xml";
+			path = "Info.plist";
+			sourceTree = "<group>";
+		};
+		EB07F2765758374128E61979 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "sourcecode.swift";
+			path = "WakeGuardApp.swift";
+			sourceTree = "<group>";
+		};
+		44712190440BFDC8174C6AD5 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "sourcecode.swift";
+			path = "WakeStore.swift";
+			sourceTree = "<group>";
+		};
+		13C4608B5138EBE9B3A45A55 = {
+			isa = PBXGroup;
+			children = (35EF1D121F4E145A5E44095C, EB07F2765758374128E61979, 44712190440BFDC8174C6AD5,);
+			path = App;
+			sourceTree = "<group>";
+		};
+		20B1A3CCDED1C488B04461CE = {
+			isa = PBXFileReference;
+			lastKnownFileType = "sourcecode.swift";
+			path = "Challenge.swift";
+			sourceTree = "<group>";
+		};
+		8F1B16DCD85FEAD322819F4C = {
+			isa = PBXFileReference;
+			lastKnownFileType = "sourcecode.swift";
+			path = "Models.swift";
+			sourceTree = "<group>";
+		};
+		97FDE38640D73085411C90B0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "sourcecode.swift";
+			path = "Schedule.swift";
+			sourceTree = "<group>";
+		};
+		6C1ADB8F0C59D95D6C4433BA = {
+			isa = PBXFileReference;
+			lastKnownFileType = "sourcecode.swift";
+			path = "Storage.swift";
+			sourceTree = "<group>";
+		};
+		2BA340BF271E1A0E2D6B10FC = {
+			isa = PBXGroup;
+			children = (20B1A3CCDED1C488B04461CE, 8F1B16DCD85FEAD322819F4C, 97FDE38640D73085411C90B0, 6C1ADB8F0C59D95D6C4433BA,);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		64D2C6EF541D8D69CD924AAB = {
+			isa = PBXFileReference;
+			lastKnownFileType = "sourcecode.swift";
+			path = "WakeMetadata.swift";
+			sourceTree = "<group>";
+		};
+		B8A7C4C7C43B9A2F11EEEA63 = {
+			isa = PBXGroup;
+			children = (64D2C6EF541D8D69CD924AAB,);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		33CB79B758FCE800BCAAB215 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "sourcecode.swift";
+			path = "OpenChallengeIntent.swift";
+			sourceTree = "<group>";
+		};
+		EAE43514597859AE2123CF0E = {
+			isa = PBXFileReference;
+			lastKnownFileType = "sourcecode.swift";
+			path = "SystemAlarms.swift";
+			sourceTree = "<group>";
+		};
+		40636B479E27CD8427A69876 = {
+			isa = PBXGroup;
+			children = (33CB79B758FCE800BCAAB215, EAE43514597859AE2123CF0E,);
+			path = System;
+			sourceTree = "<group>";
+		};
+		756BF07E6E319B6669D83F16 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "sourcecode.swift";
+			path = "EditorView.swift";
+			sourceTree = "<group>";
+		};
+		A4FE56506C398E398AAE1E84 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "sourcecode.swift";
+			path = "HomeView.swift";
+			sourceTree = "<group>";
+		};
+		62897DA4F8BFF02E4FFB3035 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "sourcecode.swift";
+			path = "MathView.swift";
+			sourceTree = "<group>";
+		};
+		076E51B8D3B9E69ACA2562DB = {
+			isa = PBXFileReference;
+			lastKnownFileType = "sourcecode.swift";
+			path = "SettingsScreen.swift";
+			sourceTree = "<group>";
+		};
+		6BCFDF74E09E3385B1DD91B6 = {
+			isa = PBXGroup;
+			children = (756BF07E6E319B6669D83F16, A4FE56506C398E398AAE1E84, 62897DA4F8BFF02E4FFB3035, 076E51B8D3B9E69ACA2562DB,);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		200350BBF43B9997A177C53D = {
+			isa = PBXFileReference;
+			lastKnownFileType = "text.plist.xml";
+			path = "Info.plist";
+			sourceTree = "<group>";
+		};
+		98D32289367EF767F10AEF07 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "sourcecode.swift";
+			path = "WakeActivity.swift";
+			sourceTree = "<group>";
+		};
+		D81C48B30DD553C55C9E3D68 = {
+			isa = PBXGroup;
+			children = (200350BBF43B9997A177C53D, 98D32289367EF767F10AEF07,);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		A24366F5E17D51D4596F80E7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "sourcecode.swift";
+			path = "WakeGuardTests.swift";
+			sourceTree = "<group>";
+		};
+		6DC4FAD667A85B8567F612FB = {
+			isa = PBXGroup;
+			children = (A24366F5E17D51D4596F80E7,);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		34DBA0BD8EA6FC20E494E627 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "audio.wav";
+			path = "chime.wav";
+			sourceTree = "<group>";
+		};
+		BD7D297E76F82CC7B50DC159 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "audio.wav";
+			path = "five.wav";
+			sourceTree = "<group>";
+		};
+		F14E96C256FDEBD0D829A72E = {
+			isa = PBXFileReference;
+			lastKnownFileType = "audio.wav";
+			path = "pulse.wav";
+			sourceTree = "<group>";
+		};
+		381EED0B87F73C8C22B09167 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "audio.wav";
+			path = "rise.wav";
+			sourceTree = "<group>";
+		};
+		D1A66D70A17252190A71CE1E = {
+			isa = PBXFileReference;
+			lastKnownFileType = "audio.wav";
+			path = "ten.wav";
+			sourceTree = "<group>";
+		};
+		A73D6C7B66B63B2EE909829B = {
+			isa = PBXFileReference;
+			lastKnownFileType = "audio.wav";
+			path = "two.wav";
+			sourceTree = "<group>";
+		};
+		054869CAD08CFB493FF6B27C = {
+			isa = PBXGroup;
+			children = (34DBA0BD8EA6FC20E494E627, BD7D297E76F82CC7B50DC159, F14E96C256FDEBD0D829A72E, 381EED0B87F73C8C22B09167, D1A66D70A17252190A71CE1E, A73D6C7B66B63B2EE909829B,);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		0C299F368686D7C3AF7EE31B = {
+			isa = PBXFileReference;
+			lastKnownFileType = "folder.assetcatalog";
+			path = "Assets.xcassets";
+			sourceTree = "<group>";
+		};
+		41D311A605520FC7B8B9A980 = {
+			isa = PBXGroup;
+			children = (054869CAD08CFB493FF6B27C, 0C299F368686D7C3AF7EE31B,);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0B3FB82572B2E31F2FC31B99 = {
+			isa = PBXFileReference;
+			explicitFileType = "wrapper.application";
+			includeInIndex = 0;
+			path = "WakeGuard.app";
+			sourceTree = "BUILT_PRODUCTS_DIR";
+		};
+		DAE934BB675902F027E17B8E = {
+			isa = PBXFileReference;
+			explicitFileType = "wrapper.app-extension";
+			includeInIndex = 0;
+			path = "WakeGuardActivity.appex";
+			sourceTree = "BUILT_PRODUCTS_DIR";
+		};
+		1E3C9481F9209144203CBA74 = {
+			isa = PBXFileReference;
+			explicitFileType = "wrapper.cfbundle";
+			includeInIndex = 0;
+			path = "WakeGuardTests.xctest";
+			sourceTree = "BUILT_PRODUCTS_DIR";
+		};
+		0A3E27B8CA818264D75C8D81 = {
+			isa = PBXGroup;
+			children = (0B3FB82572B2E31F2FC31B99, DAE934BB675902F027E17B8E, 1E3C9481F9209144203CBA74,);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D6E4079E36703EBD37C0072 = {
+			isa = PBXGroup;
+			children = (13C4608B5138EBE9B3A45A55, 2BA340BF271E1A0E2D6B10FC, B8A7C4C7C43B9A2F11EEEA63, 40636B479E27CD8427A69876, 6BCFDF74E09E3385B1DD91B6, D81C48B30DD553C55C9E3D68, 6DC4FAD667A85B8567F612FB, 41D311A605520FC7B8B9A980, 0A3E27B8CA818264D75C8D81,);
+			sourceTree = "<group>";
+		};
+		73EBF6644258C120893E685D = {
+			isa = XCBuildConfiguration;
+			name = Debug;
+			buildSettings = {
+				SDKROOT = iphoneos;
+				"IPHONEOS_DEPLOYMENT_TARGET" = "26.0";
+				"SWIFT_VERSION" = "5.0";
+				"TARGETED_DEVICE_FAMILY" = 1;
+				"CLANG_ENABLE_MODULES" = YES;
+				"CLANG_ENABLE_OBJC_ARC" = YES;
+				"SWIFT_EMIT_LOC_STRINGS" = YES;
+				"CURRENT_PROJECT_VERSION" = 1;
+				"MARKETING_VERSION" = "1.0";
+				"VERSIONING_SYSTEM" = "apple-generic";
+				"CODE_SIGN_STYLE" = Automatic;
+				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
+				"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
+				"ENABLE_TESTABILITY" = YES;
+				"ONLY_ACTIVE_ARCH" = YES;
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "DEBUG $(inherited)";
+				"DEBUG_INFORMATION_FORMAT" = dwarf;
+			};
+		};
+		0B0C687DF8B6B8DC790B519C = {
+			isa = XCBuildConfiguration;
+			name = Release;
+			buildSettings = {
+				SDKROOT = iphoneos;
+				"IPHONEOS_DEPLOYMENT_TARGET" = "26.0";
+				"SWIFT_VERSION" = "5.0";
+				"TARGETED_DEVICE_FAMILY" = 1;
+				"CLANG_ENABLE_MODULES" = YES;
+				"CLANG_ENABLE_OBJC_ARC" = YES;
+				"SWIFT_EMIT_LOC_STRINGS" = YES;
+				"CURRENT_PROJECT_VERSION" = 1;
+				"MARKETING_VERSION" = "1.0";
+				"VERSIONING_SYSTEM" = "apple-generic";
+				"CODE_SIGN_STYLE" = Automatic;
+				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
+				"SWIFT_COMPILATION_MODE" = wholemodule;
+				"SWIFT_OPTIMIZATION_LEVEL" = "-O";
+				"DEBUG_INFORMATION_FORMAT" = "dwarf-with-dsym";
+			};
+		};
+		40B822A4A267EEBF748E5C2E = {
+			isa = XCConfigurationList;
+			buildConfigurations = (73EBF6644258C120893E685D, 0B0C687DF8B6B8DC790B519C,);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F27F0EC528A81911E13F57DC = {
+			isa = PBXBuildFile;
+			fileRef = EB07F2765758374128E61979;
+		};
+		53041CDEC0352F257B46E5C2 = {
+			isa = PBXBuildFile;
+			fileRef = 44712190440BFDC8174C6AD5;
+		};
+		90E73CCC7E61003064E35544 = {
+			isa = PBXBuildFile;
+			fileRef = 20B1A3CCDED1C488B04461CE;
+		};
+		AFC758C1DD227EC09813F95A = {
+			isa = PBXBuildFile;
+			fileRef = 8F1B16DCD85FEAD322819F4C;
+		};
+		07571C68B1393C04B9B34F0C = {
+			isa = PBXBuildFile;
+			fileRef = 97FDE38640D73085411C90B0;
+		};
+		FAFF5E860B411FCEF3195A8B = {
+			isa = PBXBuildFile;
+			fileRef = 6C1ADB8F0C59D95D6C4433BA;
+		};
+		A3F4D9FEF137836DD2821EF6 = {
+			isa = PBXBuildFile;
+			fileRef = 64D2C6EF541D8D69CD924AAB;
+		};
+		585062A0D88EB2EE94607F65 = {
+			isa = PBXBuildFile;
+			fileRef = 33CB79B758FCE800BCAAB215;
+		};
+		EE8F34BC459144D8466027C5 = {
+			isa = PBXBuildFile;
+			fileRef = EAE43514597859AE2123CF0E;
+		};
+		296499AB127BC97A8B11EE99 = {
+			isa = PBXBuildFile;
+			fileRef = 756BF07E6E319B6669D83F16;
+		};
+		8EEB9C3347974550CFBC26C7 = {
+			isa = PBXBuildFile;
+			fileRef = A4FE56506C398E398AAE1E84;
+		};
+		DD437A64C919A765CF77A132 = {
+			isa = PBXBuildFile;
+			fileRef = 62897DA4F8BFF02E4FFB3035;
+		};
+		F93C8F5D67A80773326A54EF = {
+			isa = PBXBuildFile;
+			fileRef = 076E51B8D3B9E69ACA2562DB;
+		};
+		40C9A88BC6FB8E965FFE28FF = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (F27F0EC528A81911E13F57DC, 53041CDEC0352F257B46E5C2, 90E73CCC7E61003064E35544, AFC758C1DD227EC09813F95A, 07571C68B1393C04B9B34F0C, FAFF5E860B411FCEF3195A8B, A3F4D9FEF137836DD2821EF6, 585062A0D88EB2EE94607F65, EE8F34BC459144D8466027C5, 296499AB127BC97A8B11EE99, 8EEB9C3347974550CFBC26C7, DD437A64C919A765CF77A132, F93C8F5D67A80773326A54EF,);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A039AA2A48F727C790CEC8C = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = ();
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99C556A51E1830617400B8AC = {
+			isa = PBXBuildFile;
+			fileRef = 0C299F368686D7C3AF7EE31B;
+		};
+		E9A1C05112CDBA4ECCB1C0C5 = {
+			isa = PBXBuildFile;
+			fileRef = 34DBA0BD8EA6FC20E494E627;
+		};
+		D4C3156C0A88FABC04391628 = {
+			isa = PBXBuildFile;
+			fileRef = BD7D297E76F82CC7B50DC159;
+		};
+		4D8AB7E2D6D9534B4F22D2E6 = {
+			isa = PBXBuildFile;
+			fileRef = F14E96C256FDEBD0D829A72E;
+		};
+		D95D2B20264E347612EB0D75 = {
+			isa = PBXBuildFile;
+			fileRef = 381EED0B87F73C8C22B09167;
+		};
+		CA205B03A0BB814230E6D17A = {
+			isa = PBXBuildFile;
+			fileRef = D1A66D70A17252190A71CE1E;
+		};
+		A47A5607E15AAEEA4CF41294 = {
+			isa = PBXBuildFile;
+			fileRef = A73D6C7B66B63B2EE909829B;
+		};
+		5760C3A07B9BD7AE937B2D67 = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (99C556A51E1830617400B8AC, E9A1C05112CDBA4ECCB1C0C5, D4C3156C0A88FABC04391628, 4D8AB7E2D6D9534B4F22D2E6, D95D2B20264E347612EB0D75, CA205B03A0BB814230E6D17A, A47A5607E15AAEEA4CF41294,);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35CD119CE1706B988F52CEA4 = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 244210E48437B6556980A702;
+			proxyType = 1;
+			remoteGlobalIDString = 9C0CFF0C629619EFEC988B7A;
+			remoteInfo = WakeGuardActivity;
+		};
+		D041168B1434029B2F7D5ACE = {
+			isa = PBXTargetDependency;
+			target = 9C0CFF0C629619EFEC988B7A;
+			targetProxy = 35CD119CE1706B988F52CEA4;
+		};
+		DDED414F3A6B037A8033249B = {
+			isa = PBXBuildFile;
+			fileRef = DAE934BB675902F027E17B8E;
+			settings = {
+				ATTRIBUTES = (RemoveHeadersOnCopy,);
+			};
+		};
+		8A1EED22144C3F04485A69EE = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (DDED414F3A6B037A8033249B,);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE0E4FB7E0A513866B987F88 = {
+			isa = XCBuildConfiguration;
+			name = Debug;
+			buildSettings = {
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"LD_RUNPATH_SEARCH_PATHS" = ("$(inherited)", "@executable_path/Frameworks",);
+				"PRODUCT_BUNDLE_IDENTIFIER" = "org.example.wakeguard";
+				"INFOPLIST_FILE" = "App/Info.plist";
+				"ASSETCATALOG_COMPILER_APPICON_NAME" = AppIcon;
+				"ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME" = AccentColor;
+			};
+		};
+		534455B9C7BC51F8AE5B33F4 = {
+			isa = XCBuildConfiguration;
+			name = Release;
+			buildSettings = {
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"LD_RUNPATH_SEARCH_PATHS" = ("$(inherited)", "@executable_path/Frameworks",);
+				"PRODUCT_BUNDLE_IDENTIFIER" = "org.example.wakeguard";
+				"INFOPLIST_FILE" = "App/Info.plist";
+				"ASSETCATALOG_COMPILER_APPICON_NAME" = AppIcon;
+				"ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME" = AccentColor;
+			};
+		};
+		1ABE75BCB072BD902C231F50 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (DE0E4FB7E0A513866B987F88, 534455B9C7BC51F8AE5B33F4,);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B43F1D7BE248EFF41492E2E8 = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1ABE75BCB072BD902C231F50;
+			buildPhases = (40C9A88BC6FB8E965FFE28FF, 4A039AA2A48F727C790CEC8C, 5760C3A07B9BD7AE937B2D67, 8A1EED22144C3F04485A69EE,);
+			buildRules = ();
+			dependencies = (D041168B1434029B2F7D5ACE,);
+			name = WakeGuard;
+			productName = WakeGuard;
+			productReference = 0B3FB82572B2E31F2FC31B99;
+			productType = "com.apple.product-type.application";
+		};
+		6E84FA2BCAFD231E0A7C2960 = {
+			isa = PBXBuildFile;
+			fileRef = 64D2C6EF541D8D69CD924AAB;
+		};
+		F01BC336C442B2633C17A3AA = {
+			isa = PBXBuildFile;
+			fileRef = 98D32289367EF767F10AEF07;
+		};
+		3B7C93CDC4EAD4F34CFB15E8 = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (6E84FA2BCAFD231E0A7C2960, F01BC336C442B2633C17A3AA,);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE59544301DF1A1F9EE10065 = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = ();
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E9D2C0E491A954C6DA50F86 = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = ();
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC734E1638D93B9D4C06EBB8 = {
+			isa = XCBuildConfiguration;
+			name = Debug;
+			buildSettings = {
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"LD_RUNPATH_SEARCH_PATHS" = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks",);
+				"PRODUCT_BUNDLE_IDENTIFIER" = "org.example.wakeguard.activity";
+				"INFOPLIST_FILE" = "Widget/Info.plist";
+				"APPLICATION_EXTENSION_API_ONLY" = YES;
+				"SKIP_INSTALL" = YES;
+			};
+		};
+		D593446EEA60575DEB01727F = {
+			isa = XCBuildConfiguration;
+			name = Release;
+			buildSettings = {
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"LD_RUNPATH_SEARCH_PATHS" = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks",);
+				"PRODUCT_BUNDLE_IDENTIFIER" = "org.example.wakeguard.activity";
+				"INFOPLIST_FILE" = "Widget/Info.plist";
+				"APPLICATION_EXTENSION_API_ONLY" = YES;
+				"SKIP_INSTALL" = YES;
+			};
+		};
+		3CA2F063E041EDEC08FC74C0 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (DC734E1638D93B9D4C06EBB8, D593446EEA60575DEB01727F,);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C0CFF0C629619EFEC988B7A = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CA2F063E041EDEC08FC74C0;
+			buildPhases = (3B7C93CDC4EAD4F34CFB15E8, AE59544301DF1A1F9EE10065, 7E9D2C0E491A954C6DA50F86,);
+			buildRules = ();
+			dependencies = ();
+			name = WakeGuardActivity;
+			productName = WakeGuardActivity;
+			productReference = DAE934BB675902F027E17B8E;
+			productType = "com.apple.product-type.app-extension";
+		};
+		B5EACA56E871EBD057E5C9C1 = {
+			isa = PBXBuildFile;
+			fileRef = A24366F5E17D51D4596F80E7;
+		};
+		0E05E03C5818A4E1BF5335CA = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (B5EACA56E871EBD057E5C9C1,);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D32B5D0D2B7CFE465CA36BCE = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = ();
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D2C7EF7D80F29AB8CBA4367 = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = ();
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E9080A4A0F2309214C53FC1 = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 244210E48437B6556980A702;
+			proxyType = 1;
+			remoteGlobalIDString = B43F1D7BE248EFF41492E2E8;
+			remoteInfo = WakeGuard;
+		};
+		FDECBCEE60D496F67484B595 = {
+			isa = PBXTargetDependency;
+			target = B43F1D7BE248EFF41492E2E8;
+			targetProxy = 4E9080A4A0F2309214C53FC1;
+		};
+		B15533A19D7AEA21985ACF6E = {
+			isa = XCBuildConfiguration;
+			name = Debug;
+			buildSettings = {
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"LD_RUNPATH_SEARCH_PATHS" = ("$(inherited)", "@executable_path/Frameworks",);
+				"PRODUCT_BUNDLE_IDENTIFIER" = "org.example.wakeguard.tests";
+				"GENERATE_INFOPLIST_FILE" = YES;
+				"TEST_HOST" = "$(BUILT_PRODUCTS_DIR)/WakeGuard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WakeGuard";
+				"BUNDLE_LOADER" = "$(TEST_HOST)";
+				"SKIP_INSTALL" = YES;
+			};
+		};
+		44FAA74616E7447FC340DE7A = {
+			isa = XCBuildConfiguration;
+			name = Release;
+			buildSettings = {
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"LD_RUNPATH_SEARCH_PATHS" = ("$(inherited)", "@executable_path/Frameworks",);
+				"PRODUCT_BUNDLE_IDENTIFIER" = "org.example.wakeguard.tests";
+				"GENERATE_INFOPLIST_FILE" = YES;
+				"TEST_HOST" = "$(BUILT_PRODUCTS_DIR)/WakeGuard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WakeGuard";
+				"BUNDLE_LOADER" = "$(TEST_HOST)";
+				"SKIP_INSTALL" = YES;
+			};
+		};
+		25F456B134C60262EE905EF6 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (B15533A19D7AEA21985ACF6E, 44FAA74616E7447FC340DE7A,);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F74F1C8E90A13884580F6E4 = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25F456B134C60262EE905EF6;
+			buildPhases = (0E05E03C5818A4E1BF5335CA, D32B5D0D2B7CFE465CA36BCE, 6D2C7EF7D80F29AB8CBA4367,);
+			buildRules = ();
+			dependencies = (FDECBCEE60D496F67484B595,);
+			name = WakeGuardTests;
+			productName = WakeGuardTests;
+			productReference = 1E3C9481F9209144203CBA74;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		244210E48437B6556980A702 = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					5F74F1C8E90A13884580F6E4 = {
+						TestTargetID = B43F1D7BE248EFF41492E2E8;
+					};
+				};
+			};
+			buildConfigurationList = 40B822A4A267EEBF748E5C2E;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = ru;
+			knownRegions = (ru, Base,);
+			mainGroup = 0D6E4079E36703EBD37C0072;
+			productRefGroup = 0A3E27B8CA818264D75C8D81;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (B43F1D7BE248EFF41492E2E8, 9C0CFF0C629619EFEC988B7A, 5F74F1C8E90A13884580F6E4,);
+		};
+	};
+	rootObject = 244210E48437B6556980A702;
+}
