@@ -45,28 +45,26 @@ struct OptionsFields: View {
             Picker("Режим", selection: $options.mode) {
                 ForEach(WakeMode.allCases, id: \.self) { Text($0.rawValue).tag($0) }
             }
-            Picker("Отложить на", selection: $options.snooze) {
-                ForEach([5, 7, 9], id: \.self) { Text("\($0) мин").tag($0) }
-            }
         }
         Section("Звук") {
-            Picker("Мелодия", selection: $options.melody) {
-                ForEach(Melody.allCases, id: \.self) { Text($0.rawValue).tag($0) }
+            Picker("Мелодия", selection: Binding(get: { options.melody.resolved(for: options.mode) }, set: { options.melody = $0 })) {
+                ForEach(Melody.tunes + [.system], id: \.self) { Text($0.rawValue).tag($0) }
             }
-            Toggle("Голосовые предупреждения", isOn: $options.voice).disabled(options.mode == .gentle)
-            Button("Послушать финальный сигнал", systemImage: "speaker.wave.2") {
-                let sample = Signal(planID: UUID(), name: "", offset: 0, minute: 0, days: [], options: options)
-                guard let name = sample.soundFile else {
-                    audioError = "Системный звук iOS можно услышать при срабатывании будильника."
-                    return
+            Toggle("Произносить время поверх мелодии", isOn: $options.voice)
+            Button("Послушать сигнал за 10 минут", systemImage: "speaker.wave.2") {
+                let sample = Signal(planID: UUID(), name: "", offset: -10, minute: 0, days: [], options: options)
+                Task {
+                    do {
+                        guard let url = try await WakeAudio.prepare(sample) else {
+                            audioError = "Системный звук можно услышать при срабатывании будильника."
+                            return
+                        }
+                        player?.stop()
+                        player = try AVAudioPlayer(contentsOf: url)
+                        player?.numberOfLoops = 1
+                        player?.play()
+                    } catch { audioError = error.localizedDescription }
                 }
-                do {
-                    guard let url = Bundle.main.url(forResource: name, withExtension: nil) else {
-                        throw WakeError.message("Аудиофайл отсутствует.")
-                    }
-                    player = try AVAudioPlayer(contentsOf: url)
-                    player?.play()
-                } catch { audioError = error.localizedDescription }
             }
             .alert("Прослушивание", isPresented: Binding(get: { !audioError.isEmpty }, set: { if !$0 { audioError = "" } })) {
                 Button("Понятно") { audioError = "" }
@@ -82,9 +80,9 @@ struct OptionsFields: View {
             }
         }
         Section {
-            Picker("Резервных сигналов", selection: $options.customReserves) {
+            Picker("Резервных сигналов", selection: Binding(get: { options.customReserves.map { _ in options.reserves } }, set: { options.customReserves = $0 })) {
                 Text("По режиму").tag(nil as Int?)
-                ForEach(0...5, id: \.self) { Text("\($0)").tag(Optional($0)) }
+                ForEach((options.math ? 1 : 0)...5, id: \.self) { Text("\($0)").tag(Optional($0)) }
             }
             if options.reserves > 0 {
                 Stepper("Интервал: \(options.reserveGap) мин", value: $options.reserveGap, in: 1...10)
@@ -92,7 +90,7 @@ struct OptionsFields: View {
         } header: {
             Text("Резерв после подъёма")
         } footer: {
-            Text("Резерв на три ближайших подъёма пополняется при открытии приложения. Основные сигналы повторяются по расписанию iOS.")
+            Text("При включённых примерах будет хотя бы один резервный звонок. Решение примеров отменяет оставшиеся звонки этого подъёма. Резерв на три ближайших подъёма пополняется при открытии приложения. Основные сигналы повторяются по расписанию iOS.")
         }
     }
 }
@@ -144,4 +142,3 @@ struct SettingsScreen: View {
         }
     }
 }
-

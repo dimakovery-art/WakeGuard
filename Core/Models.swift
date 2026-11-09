@@ -10,6 +10,20 @@ enum Difficulty: String, Codable, CaseIterable {
 
 enum Melody: String, Codable, CaseIterable {
     case adaptive = "По режиму", chime = "Колокольчики", pulse = "Пульс", system = "Системный"
+    case star = "Маленькая звезда", moon = "Au clair de la lune", bridge = "Лондонский мост"
+    case yankee = "Янки Дудл", farm = "Ферма Макдональда", buns = "Hot Cross Buns"
+    case saints = "Марш святых", rain = "Rain, Rain", mountain = "Coming Round the Mountain"
+    case brother = "Братец Жак"
+
+    static let tunes: [Melody] = [.star, .moon, .bridge, .yankee, .farm, .buns, .saints, .rain, .mountain, .brother]
+    func resolved(for mode: WakeMode) -> Melody {
+        switch self {
+        case .adaptive: return mode == .insistent ? .yankee : .brother
+        case .chime: return .star
+        case .pulse: return .saints
+        default: return self
+        }
+    }
 }
 
 struct Preferences: Codable, Equatable {
@@ -23,7 +37,7 @@ struct Preferences: Codable, Equatable {
     // nil selects the mode's reserve count.
     var customReserves: Int?
     var reserveGap = 2
-    var reserves: Int { customReserves ?? (mode == .gentle ? 0 : mode == .standard ? 2 : 3) }
+    var reserves: Int { max(math ? 1 : 0, customReserves ?? (mode == .gentle ? 0 : mode == .standard ? 2 : 3)) }
 }
 
 struct Plan: Identifiable, Codable, Equatable {
@@ -52,6 +66,7 @@ struct Occurrence: Codable, Equatable, Hashable {
 
 struct Signal: Identifiable, Codable, Equatable {
     var id = UUID()
+    var audioRevision: Int? = 2
     var planID: UUID
     var name: String
     // Signed minute displacement from the final alarm.
@@ -80,21 +95,10 @@ struct Signal: Identifiable, Codable, Equatable {
         }
     }
     var soundFile: String? {
-        if options.voice && options.mode != .gentle {
-            switch offset {
-            case -10: return "ten.wav"
-            case -5: return "five.wav"
-            case -2: return "two.wav"
-            case 0...: return "rise.wav"
-            default: break
-            }
-        }
-        switch options.melody {
-        case .system: return nil
-        case .chime: return "chime.wav"
-        case .pulse: return "pulse.wav"
-        case .adaptive: return options.mode == .insistent ? "pulse.wav" : "chime.wav"
-        }
+        let tune = options.melody.resolved(for: options.mode)
+        guard let index = Melody.tunes.firstIndex(of: tune) else { return nil }
+        let cue = options.voice ? String(min(0, offset)) : "music"
+        return "wake2-\(index)-\(cue).wav"
     }
 }
 
@@ -107,4 +111,3 @@ func clockText(_ minute: Int) -> String {
     let m = (minute % 1440 + 1440) % 1440
     return String(format: "%02d:%02d", m / 60, m % 60)
 }
-

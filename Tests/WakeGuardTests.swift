@@ -101,7 +101,7 @@ final class WakeGuardTests: XCTestCase {
         XCTAssertEqual(a.filter { $0.offset > 0 }.count, 9)
         XCTAssertTrue(zip(a, b).allSatisfy { $0.0.sameRequest(as: $0.1) })
         XCTAssertEqual(a.first?.options.snooze, 9)
-        XCTAssertEqual(a.first { $0.offset == 0 }?.soundFile, "rise.wav")
+        XCTAssertEqual(a.first { $0.offset == 0 }?.soundFile, "wake2-3-0.wav")
         plan.enabled = false
         XCTAssertTrue(queue().isEmpty)
     }
@@ -151,4 +151,3 @@ final class WakeGuardTests: XCTestCase {
         XCTAssertEqual(try Data(contentsOf: disk.url), broken)
     }
 }
-
